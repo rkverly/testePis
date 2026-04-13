@@ -1,0 +1,26 @@
+{
+    "name": "riank/api",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "scripts": {
+        "start": "php -S localhost:8081",
+        "dump": "composer dump-autoload",
+        "test": "kahlan",
+
+        "db:e": "mysql -u root --password=\"root\" < db/estrutura.sql",
+        "db:d": "mysql -u root --password=\"root\" pis < db/dados.sql",
+        "db:t": "mysql -u root --password=\"root\" pis < db/dados-teste.sql",
+
+        "db": "composer db:e && composer db:d"
+    },
+    "config": {
+        "process-timeout": 0
+    },
+    "require-dev": {
+        "phputil/router": "^0.3.6",
+        "phputil/cors": "^0.5.3"
+    }
+}
